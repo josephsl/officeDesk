@@ -23,7 +23,7 @@ addon_info = {
 	"addon_summary": _("Office Desk"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description": _("""Improving support for Microsoft Office applications"),
+	"addon_description": _("""Improving support for Microsoft Office applications"""),
 	# version
 	"addon_version": "dev",
 	# Author(s)
@@ -51,7 +51,9 @@ addon_info = {
 # pythonSources = ["addon/globalPlugins/*.py"]
 # For more information on SCons Glob expressions please take a look at:
 # https://scons.org/doc/production/HTML/scons-user/apd.html
-pythonSources = []
+pythonSources = [
+	"addon/appModules/*.py",
+]
 
 # Files that contain strings for translation. Usually your python sources
 i18nSources = pythonSources + ["buildVars.py"]

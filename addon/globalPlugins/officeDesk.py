@@ -4,10 +4,17 @@
 # Adds handlers for various controls found across Microsoft Office applications.
 
 import globalPluginHandler
+import globalVars
 import addonHandler
 addonHandler.initTranslation()
 
 
+# Security: disable the global plugin altogether in secure mode.
+def disableInSecureMode(cls):
+	return globalPluginHandler.GlobalPlugin if globalVars.appArgs.secure else cls
+
+
+@disableInSecureMode
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def event_UIA_notification(self, obj, nextHandler, displayString=None, activityId=None, **kwargs):

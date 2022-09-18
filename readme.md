@@ -13,6 +13,10 @@ Notes:
 
 * This add-on requires Windows 10 or later and is optimized for Office 2016 and later, including Microsoft 365 subscription versions.
 
+## General
+
+* In backstage view, NVDA will announce search count when search results appear, as well as announcing results when up and down arrow keys are pressed.
+
 ## Word
 
 * NVDA will no longer announce formatting changes such as bold and italic onoff multiple times.

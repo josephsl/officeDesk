@@ -5,6 +5,7 @@
 
 import globalPluginHandler
 import globalVars
+from NVDAObjects.UIA import UIA, SearchField
 import addonHandler
 addonHandler.initTranslation()
 
@@ -16,6 +17,12 @@ def disableInSecureMode(cls):
 
 @disableInSecureMode
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
+
+	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
+		if isinstance(obj, UIA):
+			# Recognize search field found in backstage view.
+			if obj.UIAAutomationId == "HomePageSearchBox":
+				clsList.insert(0, SearchField)
 
 	def event_UIA_notification(self, obj, nextHandler, displayString=None, activityId=None, **kwargs):
 		# In recent versions of Word 365, notification event is used to announce editing functions,

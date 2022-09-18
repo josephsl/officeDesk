@@ -5,7 +5,7 @@
 
 import globalPluginHandler
 import globalVars
-from NVDAObjects.UIA import UIA, SearchField
+from NVDAObjects.UIA import UIA, SearchField, SuggestionsList, SuggestionListItem
 import addonHandler
 addonHandler.initTranslation()
 
@@ -23,6 +23,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			# Recognize search field found in backstage view.
 			if obj.UIAAutomationId == "HomePageSearchBox":
 				clsList.insert(0, SearchField)
+			# Also recognize suggestions list and its items.
+			elif obj.UIAElement.cachedClassName == "NetUIListView" and isinstance(obj.parent.previous, SearchField):
+				clsList.insert(0, SuggestionsList)
+			elif obj.UIAElement.cachedClassName == "NetUIListViewItem" and isinstance(obj.parent, SuggestionsList):
+				clsList.insert(0, SuggestionListItem)
 
 	def event_UIA_notification(self, obj, nextHandler, displayString=None, activityId=None, **kwargs):
 		# In recent versions of Word 365, notification event is used to announce editing functions,

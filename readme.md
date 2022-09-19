@@ -20,3 +20,4 @@ Notes:
 ## Word
 
 * NVDA will no longer announce formatting changes such as bold and italic onoff multiple times.
+* In Envelopes dialog, NVDA will announce edit field labels.

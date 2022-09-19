@@ -28,10 +28,3 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				clsList.insert(0, SuggestionsList)
 			elif obj.UIAElement.cachedClassName == "NetUIListViewItem" and isinstance(obj.parent, SuggestionsList):
 				clsList.insert(0, SuggestionListItem)
-
-	def event_UIA_notification(self, obj, nextHandler, activityId=None, **kwargs):
-		# In recent versions of Word 365, notification event is used to announce editing functions,
-		# some of them being quite anoying.
-		if obj.appModule.appName == "winword" and activityId == "AccSN1":
-			return
-		nextHandler()

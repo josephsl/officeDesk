@@ -26,6 +26,13 @@ class AppModule(appModuleHandler.AppModule):
 		if UIAWordDocument in clsList or IAccessibleWordDocument in clsList:
 			clsList.insert(0, WinwordWordDocument)
 
+	def event_UIA_notification(self, obj, nextHandler, activityId=None, **kwargs):
+		# NVDA Core issue 10950: in recent versions of Word 365, notification event is used to
+		# announce editing functions, some of them being quite anoying.
+		if activityId == "AccSN1":
+			return
+		nextHandler()
+
 
 class WinwordWordDocument(WordDocument):
 

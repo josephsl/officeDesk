@@ -1,6 +1,7 @@
-# NVDA Office Desk
+# Office Desk
 
 * Authors: Joseph Lee and contributors
+* Download [stable version][1]
 * NVDA compatibility: 2022.2 and later
 
 This add-on provides improved support for Microsoft Office applications.
@@ -21,3 +22,9 @@ Notes:
 
 * NVDA will no longer announce formatting changes such as bold and italic onoff multiple times.
 * In Envelopes dialog, NVDA will announce edit field labels.
+
+## Version 22.10
+
+* Initial release.
+
+[1]: https://addons.nvda-project.org/files/get.php?file=officedesk

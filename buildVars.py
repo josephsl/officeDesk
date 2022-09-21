@@ -25,7 +25,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""Improving support for Microsoft Office applications"""),
 	# version
-	"addon_version": "dev",
+	"addon_version": "22.10",
 	# Author(s)
 	"addon_author": "Joseph Lee <joseph.lee22590@gmail.com> and others",
 	# URL for the add-on documentation support

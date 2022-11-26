@@ -6,6 +6,7 @@
 import globalPluginHandler
 import globalVars
 from NVDAObjects.UIA import UIA, SearchField, SuggestionsList, SuggestionListItem
+from NVDAObjects.behaviors import EditableTextWithSuggestions
 import addonHandler
 addonHandler.initTranslation()
 
@@ -26,7 +27,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if obj.UIAAutomationId == "HomePageSearchBox" and versionInfo.version_year < 2023:
 				clsList.insert(0, SearchField)
 			# Also recognize suggestions list and its items.
-			elif obj.UIAElement.cachedClassName == "NetUIListView" and isinstance(obj.parent.previous, SearchField):
+			elif obj.UIAElement.cachedClassName == "NetUIListView" and isinstance(obj.parent.previous, (SearchField, EditableTextWithSuggestions)):
 				clsList.insert(0, SuggestionsList)
 			elif obj.UIAElement.cachedClassName == "NetUIListViewItem" and isinstance(obj.parent, SuggestionsList) and versionInfo.version_year < 2023:
 				clsList.insert(0, SuggestionListItem)

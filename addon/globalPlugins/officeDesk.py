@@ -23,11 +23,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Most resolved in NVDA 2023.1.
 		import versionInfo
 		if isinstance(obj, UIA):
-			# Recognize search field found in backstage view.
-			if obj.UIAAutomationId == "HomePageSearchBox" and versionInfo.version_year < 2023:
-				clsList.insert(0, SearchField)
-			# Also recognize suggestions list and its items.
-			elif obj.UIAElement.cachedClassName == "NetUIListView" and isinstance(obj.parent.previous, (SearchField, EditableTextWithSuggestions)):
+			if versionInfo.version_year < 2023:
+				# Recognize search field and suggestions list items found in backstage view.
+				if obj.UIAAutomationId == "HomePageSearchBox":
+					clsList.insert(0, SearchField)
+				elif obj.UIAElement.cachedClassName == "NetUIListViewItem" and isinstance(obj.parent, SuggestionsList):
+					clsList.insert(0, SuggestionListItem)
+			# Also recognize suggestions list.
+			if obj.UIAElement.cachedClassName == "NetUIListView" and isinstance(obj.parent.previous, (SearchField, EditableTextWithSuggestions)):
 				clsList.insert(0, SuggestionsList)
-			elif obj.UIAElement.cachedClassName == "NetUIListViewItem" and isinstance(obj.parent, SuggestionsList) and versionInfo.version_year < 2023:
-				clsList.insert(0, SuggestionListItem)

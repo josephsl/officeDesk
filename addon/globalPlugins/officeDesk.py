@@ -30,5 +30,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				elif obj.UIAElement.cachedClassName == "NetUIListViewItem" and isinstance(obj.parent, SuggestionsList):
 					clsList.insert(0, SuggestionListItem)
 			# Also recognize suggestions list.
-			if obj.UIAElement.cachedClassName == "NetUIListView" and isinstance(obj.parent.previous, (SearchField, EditableTextWithSuggestions)):
+			if (
+				obj.UIAElement.cachedClassName == "NetUIListView"
+				and isinstance(obj.parent.previous, (SearchField, EditableTextWithSuggestions))
+			):
 				clsList.insert(0, SuggestionsList)

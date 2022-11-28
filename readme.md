@@ -16,12 +16,16 @@ Notes:
 
 ## General
 
-* In backstage view, NVDA will announce search count when search results appear, as well as announcing results when up and down arrow keys are pressed.
+* In backstage view, NVDA will announce search count when search results appear, as well as announcing results when up and down arrow keys are pressed. Search field and suggestions list item detection are now part of NVDA 2023.1.
 
 ## Word
 
 * NVDA will no longer announce formatting changes such as bold and italic onoff multiple times.
 * In Envelopes dialog, NVDA will announce edit field labels.
+
+## Version 22.12
+
+* Search suggestion sounds are heard once again in NVDA alpha snapshots.
 
 ## Version 22.10
 

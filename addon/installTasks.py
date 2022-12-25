@@ -21,12 +21,20 @@ def onInstall():
 	# Translators: title of the error dialog shown when trying to install the add-on in unsupported systems.
 	# Unsupported systems include Windows versions earlier than 10 and unsupported feature updates.
 	unsupportedWindowsReleaseTitle = _("Unsupported Windows release")
-	if currentWinVer < winVersion.WIN10:
+	minimumWinVer = winVersion.WIN10
+	if currentWinVer < minimumWinVer:
 		if not globalVars.appArgs.minimal:
 			gui.messageBox(
 				_(
-					# Translators: Dialog text shown when trying to install the add-on on releases earlier than Windows 10.
-					"You are using an older version of Windows. This add-on requires Windows 10 or later."
+					# Translators: Dialog text shown when trying to install the add-on on
+					# releases earlier than minimum supported release.
+					"You are using {releaseName} ({build}), a Windows release not supported by this add-on.\n"
+					"This add-on requires {supportedReleaseName} ({supportedBuild}) or later."
+				).format(
+					releaseName=currentWinVer.releaseName,
+					build=currentWinVer.build,
+					supportedReleaseName="Windows10",
+					supportedBuild=minimumWinVer.build,
 				), unsupportedWindowsReleaseTitle, wx.OK | wx.ICON_ERROR
 			)
 		raise RuntimeError("Attempting to install Office Desk on Windows releases earlier than 10")

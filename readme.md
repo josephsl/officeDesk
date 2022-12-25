@@ -2,7 +2,7 @@
 
 * Authors: Joseph Lee and contributors
 * Download [stable version][1]
-* NVDA compatibility: 2022.2 and later
+* NVDA compatibility: 2022.3 and later
 
 This add-on provides improved support for Microsoft Office applications.
 
@@ -22,6 +22,10 @@ Notes:
 
 * NVDA will no longer announce formatting changes such as bold and italic onoff multiple times.
 * In Envelopes dialog, NVDA will announce edit field labels.
+
+## Version 23.01
+
+* NVDA 2022.3 or later is required.
 
 ## Version 22.12
 

@@ -1,5 +1,5 @@
 # NVDA Office Desk
-# Copyright 2022 Joseph Lee and contributors, released under GPL.
+# Copyright 2022-2023 Joseph Lee and contributors, released under GPL.
 
 # Adds handlers for various controls found across Microsoft Office applications.
 

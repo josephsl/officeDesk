@@ -1,5 +1,5 @@
 # Part of Office Desk add-on
-# Copyright 2022 Joseph Lee, released under GPL
+# Copyright 2022-2023 Joseph Lee, released under GPL
 
 import appModuleHandler
 

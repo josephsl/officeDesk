@@ -32,7 +32,7 @@ class AppModule(AppModule):
 
 class WinwordWordDocument(WinwordWordDocument):
 
-	def _get_name(self):
+	def _get_name(self) -> str:
 		# Some places in Word have actual labels, not document title.
 		# NVDA Core issue 14156: notably, envelopes dialog edit fields do have usable labels.
 		name = super(WinwordWordDocument, self).name

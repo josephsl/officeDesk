@@ -40,4 +40,4 @@ Notes:
 
 * Initial release.
 
-[1]: https://addons.nvda-project.org/files/get.php?file=officedesk
+[1]: https://addons.nvda-project.org/files/get.php?file=officeDesk

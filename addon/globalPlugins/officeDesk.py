@@ -20,16 +20,8 @@ def disableInSecureMode(cls):
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
-		# Most resolved in NVDA 2023.1.
-		import versionInfo
 		if isinstance(obj, UIA):
-			if versionInfo.version_year < 2023:
-				# Recognize search field and suggestions list items found in backstage view.
-				if obj.UIAAutomationId == "HomePageSearchBox":
-					clsList.insert(0, SearchField)
-				elif obj.UIAElement.cachedClassName == "NetUIListViewItem" and isinstance(obj.parent, SuggestionsList):
-					clsList.insert(0, SuggestionListItem)
-			# Also recognize suggestions list.
+			# Recognize suggestions list.
 			if (
 				obj.UIAElement.cachedClassName == "NetUIListView"
 				and isinstance(obj.parent.previous, (SearchField, EditableTextWithSuggestions))

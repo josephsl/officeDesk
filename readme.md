@@ -2,7 +2,7 @@
 
 * Authors: Joseph Lee and contributors
 * Download [stable version][1]
-* NVDA compatibility: 2022.4 and later
+* NVDA compatibility: 2023.1 and later
 
 This add-on provides improved support for Microsoft Office applications.
 
@@ -16,12 +16,16 @@ Notes:
 
 ## General
 
-* In backstage view, NVDA will announce search count when search results appear, as well as announcing results when up and down arrow keys are pressed. Search field and suggestions list item detection are now part of NVDA 2023.1.
+* In backstage view, NVDA will announce search count when search results appear.
 
 ## Word
 
 * NVDA will no longer announce formatting changes such as bold and italic onoff multiple times.
 * In Envelopes dialog, NVDA will announce edit field labels.
+
+## Version 24.04
+
+* NVDA 2023.1 or later is required.
 
 ## Version 23.02
 

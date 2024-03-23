@@ -5,7 +5,7 @@
 
 import globalPluginHandler
 import globalVars
-from NVDAObjects.UIA import UIA, SearchField, SuggestionsList, SuggestionListItem
+from NVDAObjects.UIA import UIA, SearchField, SuggestionsList
 from NVDAObjects.behaviors import EditableTextWithSuggestions
 import addonHandler
 addonHandler.initTranslation()
